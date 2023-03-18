@@ -2,14 +2,14 @@ import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCWkpGvYsv7q86wKneURIbMrbAZ4zUidG8",
-    authDomain: "tinder-clone-75bba.firebaseapp.com",
-    projectId: "tinder-clone-75bba",
-    storageBucket: "tinder-clone-75bba.appspot.com",
-    messagingSenderId: "736902181175",
-    appId: "1:736902181175:web:3e3923d6d15de3c9a9aab2",
-    measurementId: "G-GFK1GF617Y"
-  };
+  apiKey: "AIzaSyAB5fLdf9FLn-6SaP5AW8LxH7ej5_ERNio",
+  authDomain: "project-39b47.firebaseapp.com",
+  projectId: "project-39b47",
+  storageBucket: "project-39b47.appspot.com",
+  messagingSenderId: "679540474575",
+  appId: "1:679540474575:web:cf35863671d71aa65cedba",
+  measurementId: "G-G8ELS3R54H"
+};
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const database = firebaseApp.firestore();
