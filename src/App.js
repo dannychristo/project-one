@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={
             <div>
               <Header />
-              <TinderCards2 />
+              <TinderCards />
               {/*<SwipeButtons />*/}
             </div>} 
           />
