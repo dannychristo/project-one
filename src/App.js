@@ -6,6 +6,8 @@ import TinderCards2 from "./TinderCards2";
 import Chats from "./Chats";
 import ChatScreen from "./ChatScreen";
 import Map from "./Map";
+import Navbar from "./Navbar";
+import Gasprices from "./Gasprices";
 
 import './App.css';
 
@@ -21,6 +23,22 @@ function App() {
               {/*<SwipeButtons />*/}
             </div>} 
           />
+
+          <Route path="/Login_page" element = {
+          <div>
+            <Header backButton="/"/>
+           <Navbar />
+           </div>}
+          />
+           
+
+          <Route path="/Gasprice" element = {
+          <div>
+            <Header backbutton ="Login_page"/>
+            <Gasprices/>
+            </div>}/>
+            
+
           <Route path="/chat" element={
             <div>
               <Header backButton="/" />

@@ -15,9 +15,12 @@
                         <ArrowBackIosIcon fontSize="large" className="header__icon" />
                     </IconButton>   
                 ):(
+                    <Link to = "/Login_page">
                     <IconButton>
                         <PersonIcon className="header__icon" fontSize="large" />
                     </IconButton>
+                    </Link>
+                    
                 )}
 
                 <Link to="/">

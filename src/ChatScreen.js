@@ -1,70 +1,63 @@
-import React, {useState} from "react";
-import Avatar from "@mui/material/Avatar";
-import "./ChatScreen.css";
+import Avatar from "@mui/material/Avatar"
+import React, { useState, useEffect, useRef } from "react";
+import "./ChatScreen.css"
+import database from "./firebase"
+import {onSnapshot, query, collection, orderBy} from "firebase/firestore"
+import {auth} from "./firebase"
+import SendMessage from "./SendMessage";
+
+
+
 
 function ChatScreen() {
-    const [input, setInput] = useState('');
-    const [messages, setMessages] = useState ([
-        {
-            name: 'Mark',
-            image: 'https://cdn1.edgedatg.com/aws/v2/abc/SharkTank/person/942357/9828d1c422a22d1366a05121fcf78eef/528x528-Q90_9828d1c422a22d1366a05121fcf78eef.jpg',
-            message: 'Whats up'
-        },
-        {
-            name: 'Mark',
-            image: 'https://cdn1.edgedatg.com/aws/v2/abc/SharkTank/person/942357/9828d1c422a22d1366a05121fcf78eef/528x528-Q90_9828d1c422a22d1366a05121fcf78eef.jpg',
-            message: 'How are you'
-        },
-        {
-            message: 'Oh hi Mark, how are oy'
-        }
-    ])
+    const [messages, setMessages] = useState([]);
+    const scroll = useRef();
 
-    const handleSend = e => {
-        e.preventDefault();
 
-        setMessages([...messages, { message: input }]);
-        setInput('');
-    };
+    useEffect(() => {
+        const q = query(collection(database,"messages"), orderBy('timestamp'))
+        const unsubscribe =onSnapshot(q, (querySnapshot)=> {
+            let messages =[]
+            querySnapshot.forEach((doc) => {
+                messages.push({...doc.data(), id: doc.id})
+            })
+            setMessages(messages)
+        })
+        return () => unsubscribe();
+    },[])
+
 
     return (
+        <>
         <div className="chatScreen">
-            <p className="chatScreen__timestamp">YOU MATCHED WITH MARK ON 10/02/23</p>
-            {messages.map(message => (
-                message.name ? (
-                    <div class="chatScreen__message">
-                        <Avatar 
-                            className="chatScreen__image"
-                            alt={message.name}
-                            src={message.image}
-                        />
-                        <p className="chatScreen__text">{message.message}</p>
-                    </div>
-                ):(
-                    <div class="chatScreen__message">
-                        <p className="chatScreen__textUser">{message.message}</p>
-                    </div>
-                )
-                
+            <p className="chatScreen__timestamp">
+            <h2>YOU MATCHED WITH ELLEN ON 10/08/20</h2>
+            </p>
 
-            ))}
-            <form className="chatScreen__input">
-                <input 
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                className="chatScreen__inputField"
-                placeholder="Type a message.."
-                type="text"
-                />
-                <button 
-                onClick = { handleSend }
-                type="submit"
-                className="chatScreen__inputButton">
-                    SEND
-                </button>
-            </form>
+            {messages && messages.map((message) => (
+                message.uid === auth.currentUser.uid ? (
+
+                    <div className="chatScreen__message">
+                    <p className="chatScreen__textUser">{message.text}</p>
+                </div>
+                ) : (
+                
+                <div className="chatScreen__message">
+                    <Avatar
+                    className="chatscreen__image"
+                    alt={message.name}
+                    src={message.image}
+                    />
+                    <p className="chatScreen__text">{message.text}</p>
+                </div>
+
+                )
+       ))}  
         </div>
+        <SendMessage scroll = {scroll}/>
+        <span ref={scroll}></span>
+        </>
+        
     );
 }
-
-export default ChatScreen;
+export default ChatScreen
