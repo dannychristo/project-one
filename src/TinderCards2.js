@@ -6,7 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CloseIcon from '@mui/icons-material/Close';
 import ReplayIcon from '@mui/icons-material/Replay';
-import database from './firebase';
+//import database from './firebase';
+import People from './PeopleBase';
 
 const db = [
     {
@@ -27,22 +28,13 @@ const db = [
     }
   ]
 
-{/*
-const snapshot = await db.get();
-snapshot.forEach(doc => {
-    console.log(doc.id, '=>', doc.data());
-});
-*/}
-
-//const db = database;
-
 function TinderCards2 () {
+    //const db = People();
     const [currentIndex, setCurrentIndex] = useState(db.length - 1);
-    const [people, setPeople] = useState([]);
     const [lastDirection, setLastDirection] = useState()
     const currentIndexRef = useRef(currentIndex)
 
-    {/*useEffect(() => {
+    /*useEffect(() => {
         const unsubscribe = database
         .collection("people")
         .onSnapshot((snapshot) => 
@@ -52,7 +44,9 @@ function TinderCards2 () {
         return () => {
             unsubscribe(); //cleanup
         }
-    }, []);*/}
+    }, []);*/
+
+    console.log(db);
 
     const childRefs = useMemo(
         () =>
@@ -93,14 +87,6 @@ function TinderCards2 () {
     
     return (
         <div>
-            <link
-                href='https://fonts.googleapis.com/css?family=Damion&display=swap'
-                rel='stylesheet'
-            />
-            <link
-                href='https://fonts.googleapis.com/css?family=Alatsi&display=swap'
-                rel='stylesheet'
-            />
             <div className='tinderCards__cardContainer'>
                 {db.map((person,index) => (
                     <TinderCard
@@ -135,5 +121,9 @@ function TinderCards2 () {
         </div>
     )
 }
+
+/*People().then(
+    function(value) {TinderCards2(value);}
+);*/
 
 export default TinderCards2
