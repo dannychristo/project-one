@@ -1,0 +1,16 @@
+.home{
+    background-color:#6a6cc0 ;
+    height: 86.9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 65%;
+    height: 90%;
+    display: flex;
+    overflow: hidden;
+
+}

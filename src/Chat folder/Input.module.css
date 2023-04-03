@@ -1,0 +1,39 @@
+.input{
+    height: 40px;
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 18px;
+}
+.send{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+.image{
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    margin-bottom: 5px;
+}
+.button{
+    border: none;
+    color: white;
+    background-color: rgb(1, 160, 168);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+
+}
