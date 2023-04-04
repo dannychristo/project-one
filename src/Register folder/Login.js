@@ -37,7 +37,18 @@ function Login () {
         
         
     try{
-        await signInWithPopup(auth, googleProvider);
+        const res = await signInWithPopup(auth, googleProvider);
+
+        const user = res.user;
+
+            database.collection("users").doc(res.user.uid).set({
+              uid: user.uid,
+              displayName:user.displayName,
+              email:user.email,
+              photoURL: user.photoURL,
+            })
+
+            database.collection("userChats").doc(res.user.uid).set({}, {merge: true})
         navigate("/")
 
     } catch (err){

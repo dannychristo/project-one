@@ -90,7 +90,7 @@ uploadTask.on(
 
 
 
-            database.collection("userChats").doc(res.user.uid).set({})
+            database.collection("userChats").doc(res.user.uid).set({}, {merge: true})
 
         navigate("/")
 
