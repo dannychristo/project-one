@@ -1,0 +1,17 @@
+.container{
+    background-color: #d0d0ed;
+    padding: 10px;
+    height: calc(100% - 129px);
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(93, 93, 93) ;
+    border-radius: 10px;
+    scroll-behavior: smooth;
+}

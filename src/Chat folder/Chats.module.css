@@ -1,0 +1,35 @@
+.img{
+    background-color: #ddddf7;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+.userChat{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    overflow-y: scroll;
+}
+.userChatInfo{
+    max-width: 80%;
+    
+    
+}
+.userChat:hover{
+    background-color: #2e2f58;
+}
+.userChatSpan{
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+.userChatP{
+    font-size: 14px;
+    color: lightgray;
+
+}

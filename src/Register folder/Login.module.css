@@ -1,0 +1,84 @@
+.formContainer{
+    background-color: #6a6cc0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.formWrapper{
+    background-color: white;
+    padding-top:20px ;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 24px;
+    color: #84263c;
+}
+.title {
+
+    font-size: 17px;
+    color: #84263c;
+}
+.formLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.input__Style{
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid#6a6cc0;
+    width: 250px;
+    
+}
+
+.RegisterButton{
+    background-color: rgb(105, 107, 174);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.RegisterButton:hover{
+    background-color: #282aafc9;
+}
+.RegisterText{
+    color: #6a6cc0;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.inputButton{
+    display: none;
+}
+.photoIcon{
+    color: #6a6cc0;
+    transform: scale(2);
+    cursor: pointer;
+    align-items: center;
+    
+}
+.RegisterLink {
+    border-bottom: 1px solid #2408f8 ;
+}
+
+.GoogleButton{
+    transform: scale(0.8);
+    margin-top: 20px;
+    position: relative; top: 10px;
+
+}

@@ -1,0 +1,53 @@
+.gasprice__Background{
+    background-color:#6a6cc0 ;
+}
+
+.both__collumn {
+    display: flex;
+    column-gap: 100px;
+
+}
+  
+.header__style {
+    border-bottom: solid 1px;
+    text-align: center;
+    margin-bottom: 3;
+}
+.gasprice__collumn {
+    max-width: 5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax (20rem, 24rem));
+    gap: 4rem;
+    
+    object-fit: cover;
+
+    
+}
+.image__style {
+    height: 100px;
+    
+}
+
+.text__style {
+    font-size: 12px;
+}
+
+.price__style {
+    display: flex;
+    justify-content:space-between;
+    border-bottom: solid 1px;
+}
+
+.location {
+    font-weight: 600;
+
+}
+.price {
+    color: rgb(4, 4, 4);
+    font-weight: 700;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}

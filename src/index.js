@@ -4,12 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { AuthContextProvider } from './Context folder/AuthContext';
+import { ChatContextProvider } from './Context folder/ChatContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
+<React.StrictMode>
+  <AuthContextProvider>
+    <ChatContextProvider>
+    <App/>
+    </ChatContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
+  
+    
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
